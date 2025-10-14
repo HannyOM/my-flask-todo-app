@@ -4,7 +4,7 @@ A basic Todo application made with flask to help track your tasks.
 
 ## Requirements:
 
-NOTE: For any installation you do not know yet, please check YouTube for a video tutorial on how to install it.
+NOTE: For any installation you do not know yet, please check YouTube for a video tutorial.
 
 You should have installed:
 
