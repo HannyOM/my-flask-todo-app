@@ -1,6 +1,5 @@
-# Ignore .gitignore file
-.gitignore
-
 # Ignore virtual environment
 /virtual_env
 
+#Ignore pycache
+__pycache__
