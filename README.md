@@ -22,5 +22,5 @@ You should have installed:
 ## Suggestions for Improvement:
 
 1. Add date and time tracking.
-2. Add notifications abilities.
-3. Add caller agent for reminders.
+2. Add notifications for reminders.
+3. Add caller agent for better reminders.
