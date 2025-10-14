@@ -16,6 +16,7 @@ You should have installed:
 1. Create a folder to contain the entire project. Here, I used the name "my-flask-todo-app".
 
 2. Access the folder "my-flask-todo-app" in the terminal and create a virtual environment by running the syntax below:
+
    `python -m venv virtual_env`
 
 ## Suggestions for Improvement:
