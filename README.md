@@ -8,8 +8,8 @@ NOTE: For any installation you do not know yet, please check YouTube for a video
 
 You should have installed:
 
-Python 3.13.2 (or the latest python)
-Visual Studio Code (or any other IDE e.g Pycharm, Atom)
+- Python 3.13.2 (or the latest python)
+- Visual Studio Code (or any other IDE e.g Pycharm, Atom)
 
 ## Process:
 
