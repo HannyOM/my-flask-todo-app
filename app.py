@@ -25,7 +25,30 @@ def add():
     db.session.commit()
     return redirect(url_for("index"))
 
+@app.route('/update/<int:task_id>')
+def update(task_id):
+    task = Task.query.filter_by(id=task_id).first()
+    task.status = not task.status # type: ignore
+    db.session.commit()
+    return redirect(url_for("index"))
+
+@app.route('/delete/<int:task_id>')
+def delete(task_id):
+    task = Task.query.filter_by(id=task_id).first()
+    db.session.delete(task) 
+    db.session.commit()
+    return redirect(url_for("index"))
+
+# @app.route('/edit/<int:task_id>')
+# def edit(task_id): 
+    # return render template of edit.html (a new page), 
+    # which displays a form with two buttons: save button and 
+
+# @app.route('/save/<int:task_id>')
+# def save(task_id):
+
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
+        
     app.run(debug=True)
