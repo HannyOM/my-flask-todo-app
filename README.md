@@ -19,6 +19,12 @@ You should have installed:
 
    `python -m venv virtual_env`
 
+3. Activate the virtual environment. If you are currently within the main directory (the "my-flask-todo-app" folder) in your terminal, then run:
+   `.\virtual_env\Scripts\activate`
+
+4. After activating your virtual environment, from the terminal, run:
+   `flask run`
+
 ## Suggestions for Improvement:
 
 1. Add date and time tracking.
