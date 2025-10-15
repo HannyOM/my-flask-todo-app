@@ -9,6 +9,23 @@
 
 <body>
     <h1>ToDo App</h1>
+
+    <form action="/add" method="post">
+        <label for="task">Task</label>
+        <input name="task_title" type="text" placeholder="Enter Task...">
+        <button type="submit">Add</button>
+    </form>
+
+    {% for task in all_tasks %}
+    <p>{{task.id}} | {{task.title}}</p>
+
+    {% if task.status == False %}
+    <span>Incomplete</span>
+    {% else %}
+    <span>Complete</span>
+    {% endif %}
+
+    {% endfor %}
 </body>
 
 </html>
