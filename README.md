@@ -25,7 +25,7 @@ You should have installed:
 
 4. After activating your virtual environment, install the necessary libraries by running the code below:
 
-`pip install requirements.txt`
+   `pip install requirements.txt`
 
 5. Now run the following:
 
