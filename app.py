@@ -20,9 +20,10 @@ def index():
 @app.route('/add', methods=["POST"])
 def add():
     task_title = request.form.get("task_title")
-    new_task = Task(title=task_title, status=False) # type:ignore
-    db.session.add(new_task)
-    db.session.commit()
+    if task_title:
+        new_task = Task(title=task_title, status=False) # type:ignore
+        db.session.add(new_task)
+        db.session.commit()
     return redirect(url_for("index"))
 
 @app.route('/update/<int:task_id>')
@@ -39,13 +40,22 @@ def delete(task_id):
     db.session.commit()
     return redirect(url_for("index"))
 
-# @app.route('/edit/<int:task_id>')
-# def edit(task_id): 
-    # return render template of edit.html (a new page), 
-    # which displays a form with two buttons: save button and 
+@app.route('/edit/<int:task_id>', methods=['GET', 'POST'])
+def edit(task_id):
+    task = Task.query.filter_by(id=task_id).first()
+    return render_template("edit.html", task=task)
 
-# @app.route('/save/<int:task_id>')
-# def save(task_id):
+@app.route('/save/<int:task_id>', methods=['POST'])
+def save(task_id):
+    task = Task.query.filter_by(id=task_id).first()
+    
+    if request.method == "POST":
+        new_task_title = request.form.get("new_task_title")
+        
+        if new_task_title:
+            task.title = new_task_title #type: ignore
+            db.session.commit()
+    return redirect(url_for("index"))
 
 if __name__ == "__main__":
     with app.app_context():
