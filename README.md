@@ -23,7 +23,7 @@ You should have installed:
 
    `.\virtual_env\Scripts\activate`
 
-4. After activating your virtual environment, from the terminal, run the following:
+4. After activating your virtual environment, go to the terminal and run the following:
 
    `set FLASK_APP=app.py`
 
