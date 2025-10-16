@@ -26,7 +26,9 @@ You should have installed:
 4. After activating your virtual environment, from the terminal, run the following:
 
    `set FLASK_APP=app.py`
+
    `set FLASK_ENV=development`
+
    `flask run`
 
 ## Suggestions for Improvement:
