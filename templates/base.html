@@ -20,14 +20,14 @@
                 <div class="inline field">
                     <label for="task">Task</label>
                     <input name="task_title" type="text" placeholder="Enter Task...">
-                    <button class="ui green button" type="submit">Add</button>
+                    <button class="ui green button" style="margin-left: 10px;" type="submit">Add</button>
                 </div>
             </form>
 
             {% for task in all_tasks %}
             <div class="ui raised segment">
                 <span>
-                    {{task.id}} | {{task.title}}
+                    {{task.title}}
                     {% if task.status == False %}
                     <span class="ui grey label">Incomplete</span>
                     {% else %}
