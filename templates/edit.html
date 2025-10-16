@@ -5,18 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
 </head>
 
 <body>
-    <form action="{{ url_for('save', task_id=task.id) }}" method="post">
-        <input name="new_task_title" type="text" value="{{task.title}}">
-        <p>
-            <span>
-                <button type="submit">Save</button>
-                <a href="{{url_for('index')}}">Cancel</a>
-            </span>
-        </p>
-    </form>
+    <div style="margin-top: 100px; display: flex; justify-content: center;">
+        <div class="ui raised segment" style="width: 65%">
+            <form class="ui form" action="{{ url_for('save', task_id=task.id) }}" method="post">
+                <input name="new_task_title" type="text" value="{{task.title}}">
+                <p>
+                    <span>
+                        <button class="small ui green button" type="submit">Save</button>
+                        <a class="small ui blue button" href="{{url_for('index')}}">Cancel</a>
+                    </span>
+                </p>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>
