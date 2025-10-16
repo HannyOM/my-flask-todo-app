@@ -23,7 +23,11 @@ You should have installed:
 
    `.\virtual_env\Scripts\activate`
 
-4. After activating your virtual environment, go to the terminal and run the following:
+4. After activating your virtual environment, install the necessary libraries by running the code below:
+
+`pip install requirements.txt`
+
+5. Now run the following:
 
    `set FLASK_APP=app.py`
 
