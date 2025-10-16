@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="{{ url_for('save', task_id=task.id) }}" method="post">
+        <input name="new_task_title" type="text" value="{{task.title}}">
+        <p>
+            <span>
+                <button type="submit">Save</button>
+                <a href="{{url_for('index')}}">Cancel</a>
+            </span>
+        </p>
+    </form>
+</body>
+
+</html>
