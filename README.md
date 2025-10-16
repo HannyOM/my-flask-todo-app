@@ -33,7 +33,7 @@ You should have installed:
 
    `set FLASK_ENV=development`
 
-   `flask run`
+   `python app.py`
 
 ## Suggestions for Improvement:
 
