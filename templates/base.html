@@ -10,7 +10,7 @@
 <body>
     <h1>ToDo App</h1>
 
-    <form action="/add" method="post">
+    <form action="{{url_for('add')}}" method="post">
         <label for="task">Task</label>
         <input name="task_title" type="text" placeholder="Enter Task...">
         <button type="submit">Add</button>
@@ -26,6 +26,7 @@
     {% endif %}
 
     <a href="/update/{{ task.id }}">Update</a>
+    <a href="/edit/{{ task.id }}">Edit</a>
     <a href="/delete/{{ task.id }}">Delete</a>
 
     {% endfor %}
