@@ -26,18 +26,27 @@
 
             {% for task in all_tasks %}
             <div class="ui raised segment">
-                <span>
-                    {{task.title}}
-                    {% if task.status == False %}
-                    <span class="ui grey label">Incomplete</span>
-                    {% else %}
-                    <span class="ui green label">Complete</span>
-                    {% endif %}
-                </span>
-                <div style="margin-top: 20px;">
-                    <a class="small ui blue button" href="/update/{{ task.id }}">Update</a>
-                    <a class="small ui orange button" href="/edit/{{ task.id }}">Edit</a>
-                    <a class="small ui red button" href="/delete/{{ task.id }}">Delete</a>
+                <div style="display: flex; justify-content: space-between;">
+                    <div>
+                        {{task.title}}
+                    </div>
+                    <div>
+                        {% if task.status == False %}
+                        <span class="ui label">Incomplete</span>
+                        {% else %}
+                        <span class="ui green label">Complete</span>
+                        {% endif %}
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                    <div style="margin-top: 20px;">
+                        <a class="small ui blue button" href="/update/{{ task.id }}">Update</a>
+                        <a class="small ui orange button" href="/edit/{{ task.id }}">Edit</a>
+                        <a class="small ui red button" href="/delete/{{ task.id }}">Delete</a>
+                    </div>
+                    <div>
+                        <p class="small ui label">{{ task.date }}</p>
+                    </div>
                 </div>
             </div>
             {% endfor %}
