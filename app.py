@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
@@ -10,6 +11,8 @@ class Task(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100))
     status = db.Column(db.Boolean)
+    date = db.Column(db.Date)
+
 
 @app.route('/')
 def index():
@@ -21,7 +24,7 @@ def index():
 def add():
     task_title = request.form.get("task_title")
     if task_title:
-        new_task = Task(title=task_title, status=False) # type:ignore
+        new_task = Task(title=task_title, status=False, date=datetime.utcnow()) # type:ignore
         db.session.add(new_task)
         db.session.commit()
     return redirect(url_for("index"))
@@ -60,4 +63,4 @@ def save(task_id):
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()    
-    app.run(host='0.0.0.0', debug=True)
+    app.run(debug=True)
