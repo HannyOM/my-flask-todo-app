@@ -27,11 +27,7 @@ You should have installed:
 
    `pip install requirements.txt`
 
-5. Now run the following:
-
-   `set FLASK_APP=app.py`
-
-   `set FLASK_ENV=development`
+5. Now run:
 
    `python app.py`
 
